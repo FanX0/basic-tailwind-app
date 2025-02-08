@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fanxLogo from "../assets/fanx.svg";
 import circleFanxLogo from "../assets/circleFanx.svg";
+import { Button } from "./ui/button";
 
 const Home = () => {
   const [time, setTime] = useState<string>("");
@@ -51,6 +52,9 @@ const Home = () => {
             </div>
             <div> {time} WIB</div>
             <div>{status}</div>
+            <div>
+              <Button>Click me</Button>
+            </div>
           </div>
         </div>
         <div className="md:basis-1/2">
