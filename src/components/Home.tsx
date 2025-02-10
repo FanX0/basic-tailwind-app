@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import fanxLogo from "../assets/fanx.svg";
 import circleFanxLogo from "../assets/circleFanx.svg";
+import Arrow from "../assets/Arrow.svg";
 import { Button } from "./ui/button";
 
 const Home = () => {
@@ -36,33 +36,33 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-auto pt-20 p-4 md:p-8">
-      <div className="flex flex-col md:flex-row items-center gap-8 mt-40">
-        <div className="md:basis-1/2 text-center md:text-left">
-          <div className="text-4xl md:text-7xl font-bold">Fullstack</div>
-          <div className="text-4xl md:text-7xl font-bold">Developer</div>
+    <div className="container pt-20 mx-auto">
+      <div className="flex flex-col items-center gap-8 m-40 md:flex-row">
+        <div className="text-center md:basis-1/2 md:text-left">
+          <div className="text-4xl font-bold md:text-7xl">Fullstack</div>
+          <div className="text-4xl font-bold md:text-7xl">Developer</div>
           <div className="pt-4 text-base md:text-lg">
             I'm Bonnie, a product designer with a knack for turning problems and
             opportunities into user-driven strategic solutions with delightful
             and intuitive interface design. Currently, working at Grow.
           </div>
-          <div className="m-8 border border-black rounded-full flex flex-row items-center gap-4">
+
+          <div className="flex items-center float-left gap-4 m-8 border border-black rounded-full ">
             <div className="w-[70px] max-w-full h-auto p-2">
               <img src={circleFanxLogo} alt="circleFanxLogo" />
             </div>
             <div> {time} WIB</div>
             <div>{status}</div>
             <div>
-              <Button>Click me</Button>
+              <Button className="m-2 border border-black rounded-full w-14 h-14">
+                <img className="" src={Arrow} alt="circleFanxLogo" />
+              </Button>
             </div>
           </div>
         </div>
-        <div className="md:basis-1/2">
-          <img
-            className="w-[200px] max-w-full h-auto mx-auto"
-            src={fanxLogo}
-            alt="Logo"
-          />
+
+        <div className="flex justify-center md:basis-1/2">
+          <div className="w-[366px] h-[366px] bg-white rounded-full border borderku" />
         </div>
       </div>
     </div>

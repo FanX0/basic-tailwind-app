@@ -27,7 +27,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,7 +53,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -63,4 +63,58 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  .hovku {
+    /* box shadow 3px 3px 0px 0px #000
+  margin: 0px 3px 3px 0px */
+    @apply mb-[3px] mr-[3px] border-2 border-foreground shadow;
+  }
+
+  .hovku-pressed {
+    @apply translate-x-[2.5px] translate-y-[2.5px];
+  }
+
+  .hovku-active:active {
+    @apply active:hovku-pressed;
+  }
+
+  .hovku-focus:focus {
+    @apply focus-visible:hovku-pressed;
+  }
+
+  .borderku {
+    @apply border-black hover:shadow-[6px_6px_0px_0px_#000] hover:translate-x-[3px] hover:translate-y-[3px];
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  background-color: #b2ff44; /* warna latar */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+  /* Untuk smooth movement */
+  will-change: transform;
+}
+
+.marquee-text::after {
+  content: attr(data-text);
+  margin-left: 3rem; /* jarak antar duplikasi, bisa disesuaikan */
 }
